@@ -1,0 +1,27 @@
+
+// efecto de abrir y cerrar menu
+
+@media screen and (max-width:1280px) {
+   .nav{
+
+       visibility: hidden;
+       opacity: 0;
+   
+       position: absolute;
+       display: flex;
+       flex-direction: column;
+       align-items: end;
+       gap: 1rem;
+       top: 0;
+       right: 0;
+       padding: 2em;
+       bottom: 0;
+       background-color: $gray;
+       box-shadow: 0 00 100vmax rgba (0, 0, 0, 0.5);
+       
+   } 
+  .active {
+    opacity: 1;
+    visibility: visible;
+  }
+}

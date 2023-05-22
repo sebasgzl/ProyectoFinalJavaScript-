@@ -1,0 +1,33 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: $gray;
+  padding: 2em;
+  .logo {
+    width: 150px;
+  }
+  .abrir-menu {
+    display: none;
+    @include table {
+      display: block;
+    }
+  }
+  .nav {
+    .cerrar-menu {
+      display: none;
+      @include table {
+        display: block;
+      }
+    }
+    
+    .nav_items {
+      display: flex;
+      gap: 1em;
+      @include table {
+        flex-direction: column;
+        align-items: end;
+      }
+    }
+  }
+}
