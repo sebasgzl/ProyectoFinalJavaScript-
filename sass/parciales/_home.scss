@@ -1,11 +1,112 @@
+/* ASIDE DE CATEGORIA*/
 
+.container {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  background-color: rgb(160, 123, 95);
+  @include mobile {
+    display: block;
+  }
+  .aside {
+    padding: 2em;
+    color: $white;
+    position: sticky;
+    top: 0;
+    gap: 50px;
+    height: 100vh;
+    @include flex(flex, column, center, center);
+    @include mobile {
+      display: none;
+    }
 
-   
-    .contenedor{
-.grid{
-    display: grid;
-    grid-template-columns: repeat();
+    .aside_titulo {
+      font-weight: 400;
+      font-size: 1.5em;
+    }
+    .aside_category {
+      @include flex(flex, column, center, stretch);
+      gap: 50px;
+      .aside_btn {
+        @include iconbtn;
+      }
+    }
+  }
 }
 
+/* BUSQUEDA Y CARRITO */
 
+.main {
+  background-color: aqua;
+  padding: 1.5em;
+  .encabezado {
+    background-color: rgb(167, 80, 80);
+    display: flex;
+    margin: 1em;
+    justify-content: space-between;
+    .busqueda {
+      @include iconbtn;
+      .img {
+        height: 1.5em;
+      }
     }
+    
+      .numerito {
+        position: relative;
+        background: red;
+        right: 17px;
+        padding: 5px;
+        color:$white;
+        bottom: 20px;
+        font-size: x-small;
+        border-radius: 10em;
+      }
+  }
+}
+
+/* CONTENEDOR DE PRODUCTOS */
+
+.container-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+  padding: 1em;
+  @include table {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @include mobile {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .product {
+    @include flex(flex, column, center, stretch);
+    border-bottom-right-radius: 20px;
+    background: white;
+    border-bottom-left-radius: 20px;
+    border-radius: 1em;
+    .product_img {
+      max-width: 100%;
+      border-radius: 20px;
+    }
+    .product_details {
+      @include flex(flex, column, center, stretch);
+      background-color: rgb(2, 94, 7);
+      color: $white;
+      border-radius: 1em;
+      padding: 0.5em;
+      .product_btn {
+        border: 0;
+        background-color: $white;
+        color: $green;
+        padding: 0.5rem;
+        text-transform: uppercase;
+        border-radius: 2rem;
+        cursor: pointer;
+        border: 2px solid;
+        transition: 0.2s;
+      }
+      .product_btn:hover {
+        background-color: $green;
+        color: $white;
+      }
+    }
+  }
+}

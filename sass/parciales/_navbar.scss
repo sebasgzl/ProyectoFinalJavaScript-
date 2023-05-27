@@ -1,6 +1,5 @@
 .header {
-  display: flex;
-  align-items: center;
+  @include flexcenter(flex, center, center);
   justify-content: space-between;
   background: $gray;
   padding: 2em;
@@ -11,16 +10,20 @@
     display: none;
     @include table {
       display: block;
+      border: 0;
+      font-size: 1.25em;
+      background-color: transparent;
+      cursor: pointer;
     }
   }
   .nav {
     .cerrar-menu {
       display: none;
       @include table {
-        display: block;
+        @include iconbtn;   
       }
     }
-    
+
     .nav_items {
       display: flex;
       gap: 1em;

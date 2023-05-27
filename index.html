@@ -11,71 +11,62 @@
 </head>
 
 <body>
- <header class="header">
-     <img class="logo" src="./assest/Black Modern Gaming Banner Landscape.png" alt="">
-     <button class="abrir-menu" id="abrir">
-        <i class="bi bi-list"></i>
-     </button>
-     <nav class="nav" id="nav">
-        <button class="cerrar-menu" id="cerrar">
-            <i class="bi bi-x-lg" ></i>
+    <header class="header">
+        <img class="logo" src="./assest/Black Modern Gaming Banner Landscape.png" alt="">
+        <button class="abrir-menu" id="abrir">
+            <i class="bi bi-list"></i>
         </button>
-        <ul class="nav_items">
-            <li><a href="">Home</a></li>
-            <li><a href="">Category</a></li>
-            <li><a href="">Productos</a></li>
-            <li><a href="">Company</a></li>
-            <li><a href="">Contact</a></li>
-        </ul>
-    </nav>
- </header>
- 
- <aside class="list">
-    <ul class="list-category">
-        <li><a href="">Todos los productos</a></li>
-        <li><a href="">Monitores</a></li>
-        <li><a href="">Teclados</a></li>
-        <li><a href="">Placa de Video</a></li>
-        <li><a href="">Mouse</a></li>
-        <li><a href="">Silla Gamer</a></li>
-    </ul>
- </aside>
- 
- <main>
-    <i class="bi bi-cart-fill"></i>
-    <h2>Todos los productos</h2> 
-    <div class="container-grid">
-        <div class="product">
-            <img class="product-img" src="./assest/monitor/monitor 1.jpg" alt="monitor">
-            <div class="product-details">
-                <h3>Monitor</h3>
-                <p>$70000</p>
-                <button class="product-btn">agregar</button>
+        <nav class="nav" id="nav">
+            <button class="cerrar-menu" id="cerrar">
+                <i class="bi bi-x-lg"></i>
+            </button>
+            <ul class="nav_items">
+                <li><a href="">Home</a></li>
+                <li><a href="">Category</a></li>
+                <li><a href="">Productos</a></li>
+                <li><a href="">Company</a></li>
+                <li><a href="">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+
+        <aside class="aside">
+            <h2 class="aside_titulo">Categories</h2>
+            <ul class="aside_category">
+                <li><button id="todos" class="aside_btn boton-categoria">Todos los productos </button> </li>
+                <li><button id="monitores" class="aside_btn boton-categoria">Monitores </button> </li>
+                <li><button id="teclados" class="aside_btn boton-categoria">Teclados </button> </li>
+                <li><button id="placa" class="aside_btn boton-categoria">Placa de Video </button> </li>
+                <li><button id="mouse" class="aside_btn boton-categoria">Mouse </button> </li>
+                <li><button id="silla" class="aside_btn boton-categoria">Silla Gamer </button> </li>
+            </ul>
+        </aside>
+
+        <main class="main">
+            <div class="encabezado">
+                <button class="busqueda"><img class="img" src="./assest/icono de busqueda.png" alt=""></button>
+                
+                    <a href="./pags/carrito.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="40" fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16">
+                            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                          </svg>
+                        <span class="numerito">7</span></a>
+                
             </div>
-        </div>
-        <div class="product">
-            <img class="product-img" src="./assest/monitor/monitor 1.jpg" alt="monitor">
-            <div class="product-details">
-                <h3>Monitor2</h3>
-                <p>$70000</p>
-                <button class="product-btn">agregar</button>
+            <h2>Todos los productos</h2>
+            <div id="contenedor-productos" class="container-grid">
+               <!--SE MUESTRA POR JAVASCRIP-->
             </div>
-        </div>
-        <div class="product">
-            <img class="product-img" src="./assest/monitor/monitor 1.jpg" alt="monitor">
-            <div class="product-details">
-                <h3>Monitor3</h3>
-                <p>$70000</p>
-                <button class="product-btn">agregar</button>
-            </div>
-        </div>
+        </main>
+
     </div>
- </main>
 
 
 
 
- <script src="./js/main.js"></script>
+    <script src="./js/main.js"></script>
 </body>
 
 </html>
