@@ -24,6 +24,7 @@ a {
     align-items: end;
     gap: 1rem;
     top: 0;
+    z-index: 100;
     right: 0;
     padding: 2em;
     bottom: 0;
@@ -148,7 +149,7 @@ a {
   .container-grid .product {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: stretch;
     border-bottom-right-radius: 20px;
     background: white;

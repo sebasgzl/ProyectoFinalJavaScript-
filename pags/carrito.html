@@ -35,8 +35,8 @@
         <section class="carrito_cotainer">
             <h1 class="carrito_titulo">Carrito</h1>
             <div class="carrito">
-                <p class="carrito_vacio">Tu Carrito esta vacio<i class="bi bi-emoji-frown"></i></p>
-                <div class="carrito_productos disabled">
+                <p id="carrito-vacio"class="carrito_vacio">Tu Carrito esta vacio<i class="bi bi-emoji-frown"></i></p>
+                <div id="carrito-productos" class="carrito_productos disabled">
                     <div class="carrito_productos__producto">
                         <img class="carrito_productos__imagen" src="/assest/monitor/monitor 2.jpg" alt="">
                         <div class="carrito_productos__titulo">
@@ -86,7 +86,7 @@
                         <button class="carrito_productos__eliminar"><i class="bi bi-trash3-fill"></i></button>
                     </div>
                 </div>
-                <div class="carrito_accion disabled">
+                <div id="carrito-accion" class="carrito_accion disabled">
                     <div class="carrito_accion_izquierda">
                         <button class="carrito_accion_vaciar">vaciar</button>
                     </div>
@@ -99,11 +99,12 @@
                         <button class="carrito_accion_comprar">comprar</button>
                     </div>
                 </div>
-                <p class="carrito_comprado disabled">Gracias por tu compra.<i class="bi bi-emoji-smile"></i></p>
+                <p id="carrito-comprado" class="carrito_comprado disabled">Gracias por tu compra.<i class="bi bi-emoji-smile"></i></p>
+            </div>
         </section>
-   
-
-    <script src="/js/main.js"></script>
+        <script src="/js/navbar.js"></script>
+        <script src="/js/carrito.js"></script>
+        <script src="/js/main.js"></script>
 </body>
 
 </html>

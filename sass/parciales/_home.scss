@@ -77,7 +77,7 @@
     grid-template-columns: repeat(2, 1fr);
   }
   .product {
-    @include flex(flex, column, center, stretch);
+    @include flex(flex, column, space-between, stretch );
     border-bottom-right-radius: 20px;
     background: white;
     border-bottom-left-radius: 20px;

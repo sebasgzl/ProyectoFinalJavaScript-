@@ -1,17 +1,5 @@
-// Evento boton agregar al click 
-const nav = document.querySelector("#nav");
-const abrir = document.querySelector("#abrir");
-const cerrar = document.querySelector("#cerrar");
 
-abrir.addEventListener("click", () => {
-  nav.classList.add("active");
-});
-
-cerrar.addEventListener("click", () => {
-  nav.classList.remove("active");
-});
-
-// ARRAYS DE PRODUCTOS 
+// ARRAYS DE PRODUCTOS
 
 const productos = [
   /*    Monitores */
@@ -74,7 +62,7 @@ const productos = [
     imagen: "./assest/placa-de-video/placa de video 2.jpg",
     categoria: {
       nombre: "Placa de video",
-      id: "placa de video",
+      id: "placa-de-video",
     },
     precio: 2000,
   },
@@ -109,36 +97,43 @@ const productos = [
     },
     precio: "2009",
   },
- /*  Teclado Gamer */
- {
+  /*  Teclado Gamer */
+  {
     id: "teclado-gamer-1",
     titulo: "Teclado gamer 1",
     imagen: "./assest/teclado-gamer/teclado-gamer 1.jpg",
     categoria: {
-        nombre: "Teclado gamer",
-        id: "teclado-gamer",
+      nombre: "Teclado gamer",
+      id: "teclado-gamer",
     },
     precio: 1000,
-},
-{
+  },
+  {
     id: "teclado-gamer-2",
     titulo: "Teclado Gamer 2",
     imagen: "./assest/teclado-gamer/teclado-gamer 2.jpg",
     categoria: {
-        nombre: "Teclado gamer",
-        id: "teclado-gamer",
-        },
-        precio: "2009",
-        },
+      nombre: "Teclado gamer",
+      id: "teclado-gamer",
+    },
+    precio: "2009",
+  },
 ];
 
+//Traer del HTML
 const contenedorProductos = document.querySelector("#contenedor-productos");
-const botonesCategorias = document.querySelectorAll(".boton-categoria")
+const botonesCategorias = document.querySelectorAll(".boton-categoria");
+const tituloPrincipal = document.querySelector("#titulo-principal");
+let btnAgregar = document.querySelectorAll(".product_btn");
+let numero = document.querySelector("#numero");
 
-// COTENERDOR PRODUCTO EN EL MAIN 
+
+// *********COTENERDOR PRODUCTO EN EL MAIN
 
 function cargarProductos(productosElegidos) {
-  productos.forEach(productos => {
+  contenedorProductos.innerHTML = "";
+
+  productosElegidos.forEach((productos) => {
     const producto = document.createElement("div");
     producto.classList.add("product");
     producto.innerHTML = ` 
@@ -149,21 +144,73 @@ function cargarProductos(productosElegidos) {
             <button class="product_btn" id="${productos.id}" >agregar</button>
         </div>`;
     contenedorProductos.append(producto);
-})
+  })
+  botonAgregar();
 }
 /* Llamado */
 cargarProductos(productos);
 
+//******* MOSTRAR LA CATEGORIA CORRESPONDIENTE
 
-// MOSTRAR LA CATEGORIA CORRESPONDIENTE
-botonesCategorias.forEach(btn => {
-  btn.addEventListener("click", () => {
-const productosElegidos = productos.filter(producto => producto.categoria.id === e.currentTarget.id);
-   cargarProductos(productos);
-  })
-})
+botonesCategorias.forEach(boton => {
+  boton.addEventListener("click", (e) => {
+    botonesCategorias.forEach(boton => boton.classList.remove("active"));
+    e.currentTarget.classList.add("active");
+
+    if (e.currentTarget.id != "todos") {
+      // titulo
+      const productosCategoria = productos.find( producto => producto.categoria.id === e.currentTarget.id);
+      tituloPrincipal.innerText = productosCategoria.categoria.nombre;
+      // producto
+      const productoBtn = productos.filter(producto => producto.categoria.id === e.currentTarget.id);
+      cargarProductos(productoBtn);
+    } else {
+      // titulo
+      tituloPrincipal.innerText = "Todos los productos";
+      // producto
+      cargarProductos(productos);
+    }
+  });
+});
 
 
 
 
- 
+//*********** AGREGAR AL CARRITO
+
+function botonAgregar() {
+  btnAgregar = document.querySelectorAll(".product_btn");
+  btnAgregar.forEach(boton => {
+  boton.addEventListener("click" , agregarAlCarrito);
+});
+}
+
+
+const productosEnCarrito = [] ;
+/* ingresar los productos a la Array de carrito (productosEnCarrito)*/
+function agregarAlCarrito(e) {
+  const idBoton = e.currentTarget.id;
+  const productoAgregar = productos.find(producto => producto.id === idBoton);
+  if(productosEnCarrito.some(producto => producto.id === idBoton)){
+  const index = productosEnCarrito.findIndex(producto => producto.id === idBoton);
+  productosEnCarrito[index].cantidad++;
+ } else {
+  productoAgregar.cantidad = 1;
+ productosEnCarrito.push(productoAgregar);
+ }
+ numeroActualizado();
+ localStorage.setItem("productos-en-carrito",JSON.stringify(productosEnCarrito));
+}
+
+/* Actualiza cantidad de compra */
+function numeroActualizado() {
+  let nuevoNumero = productosEnCarrito.reduce((acc, producto)=> acc + producto.cantidad, 0);
+  numero.innerText = nuevoNumero;
+}
+
+
+
+
+
+
+
