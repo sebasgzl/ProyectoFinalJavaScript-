@@ -1,6 +1,4 @@
-
 // ARRAYS DE PRODUCTOS
-
 const productos = [
   /*    Monitores */
   {
@@ -186,7 +184,21 @@ function botonAgregar() {
 }
 
 
-const productosEnCarrito = [] ;
+/* QUE SE ACTUALIZE EL lOCALSTORAGE CON EL CARRITO */
+ let  productosEnCarrito;
+ const productosEnCarritoLS = JSON.parse(localStorage.getItem("productos-en-carrito"));
+if (productosEnCarritoLS){
+  productosEnCarrito = productosEnCarritoLS;
+  numeroActualizado();
+} else {
+productosEnCarrito = [];
+
+}
+
+
+
+
+
 /* ingresar los productos a la Array de carrito (productosEnCarrito)*/
 function agregarAlCarrito(e) {
   const idBoton = e.currentTarget.id;

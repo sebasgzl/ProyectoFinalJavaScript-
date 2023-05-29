@@ -255,3 +255,6 @@ a {
     cursor: context-menu;
     border-top-right-radius: 0rem;
     border-bottom-right-radius: 0rem; }
+
+.disabled {
+  display: none; }
