@@ -174,7 +174,7 @@ botonesCategorias.forEach(boton => {
 
 
 
-//*********** AGREGAR AL CARRITO
+//*********** AGREGAR AL CARRITO 
 
 function botonAgregar() {
   btnAgregar = document.querySelectorAll(".product_btn");
@@ -186,9 +186,11 @@ function botonAgregar() {
 
 /* QUE SE ACTUALIZE EL lOCALSTORAGE CON EL CARRITO */
  let  productosEnCarrito;
- const productosEnCarritoLS = JSON.parse(localStorage.getItem("productos-en-carrito"));
+ let productosEnCarritoLS = localStorage.getItem("productos-en-carrito")
+ /* const productosEnCarritoLS = JSON.parse(localStorage.getItem("productos-en-carrito")); */
 if (productosEnCarritoLS){
-  productosEnCarrito = productosEnCarritoLS;
+  productosEnCarrito = JSON.parse(productosEnCarritoLS);
+ /*  productosEnCarrito = productosEnCarritoLS; */
   numeroActualizado();
 } else {
 productosEnCarrito = [];
