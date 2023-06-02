@@ -1,7 +1,7 @@
 .header {
   @include flexcenter(flex, center, center);
   justify-content: space-between;
-  background: $gray;
+  background: $navbar;
   padding: 2em;
   .logo {
     width: 150px;
@@ -11,7 +11,7 @@
     @include table {
       display: block;
       border: 0;
-      font-size: 1.25em;
+      font-size: 1.2em;
       background-color: transparent;
       cursor: pointer;
     }

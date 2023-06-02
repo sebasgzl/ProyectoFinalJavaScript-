@@ -28,7 +28,7 @@ a {
     right: 0;
     padding: 2em;
     bottom: 0;
-    background-color: gray;
+    background: linear-gradient(#5395e9, #97a1b3);
     box-shadow: 0 0 100vmax rgba 0, 0, 0, 0.5; }
   .active {
     opacity: 1;
@@ -39,7 +39,7 @@ a {
   justify-content: center;
   align-items: center;
   justify-content: space-between;
-  background: gray;
+  background: linear-gradient(#5395e9, #97a1b3);
   padding: 2em; }
   .header .logo {
     width: 150px; }
@@ -49,7 +49,7 @@ a {
       .header .abrir-menu {
         display: block;
         border: 0;
-        font-size: 1.25em;
+        font-size: 1.2em;
         background-color: transparent;
         cursor: pointer; } }
   .header .nav .cerrar-menu {
@@ -73,7 +73,7 @@ a {
 .container {
   display: grid;
   grid-template-columns: 1fr 4fr;
-  background-color: #a07b5f; }
+  background-color: darkgreen; }
   @media screen and (max-width: 576px) {
     .container {
       display: block; } }
@@ -109,10 +109,9 @@ a {
 
 /* BUSQUEDA Y CARRITO */
 .main {
-  background-color: aqua;
+  background-color: grey;
   padding: 1.5em; }
   .main .encabezado {
-    background-color: #a75050;
     display: flex;
     margin: 1em;
     justify-content: space-between;
@@ -175,7 +174,7 @@ a {
       .container-grid .product .product_details .product_btn {
         border: 0;
         background-color: white;
-        color: green;
+        color: darkgreen;
         padding: 0.5rem;
         text-transform: uppercase;
         border-radius: 2rem;
@@ -183,7 +182,7 @@ a {
         border: 2px solid;
         transition: 0.2s; }
       .container-grid .product .product_details .product_btn:hover {
-        background-color: green;
+        background-color: darkgreen;
         color: white; }
 
 .carrito_cotainer {
@@ -202,7 +201,7 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: gray;
+    background-color: grey;
     padding: 0.5em;
     border-radius: 2em;
     margin: 0em 1em 0em 1em; }

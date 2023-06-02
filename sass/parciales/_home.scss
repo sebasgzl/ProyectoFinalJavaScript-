@@ -3,7 +3,7 @@
 .container {
   display: grid;
   grid-template-columns: 1fr 4fr;
-  background-color: rgb(160, 123, 95);
+  background-color: $green;
   @include mobile {
     display: block;
   }
@@ -36,10 +36,9 @@
 /* BUSQUEDA Y CARRITO */
 
 .main {
-  background-color: aqua;
+  background-color:$productoCarrito;
   padding: 1.5em;
   .encabezado {
-    background-color: rgb(167, 80, 80);
     display: flex;
     margin: 1em;
     justify-content: space-between;
