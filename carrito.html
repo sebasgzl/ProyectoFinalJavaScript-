@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>Carrito/GamingShop</title>
+</head>
+
+<body>
+    <header class="header">
+        <img class="logo" src="/assest/Black Modern Gaming Banner Landscape.png" alt="">
+        <button class="abrir-menu" id="abrir">
+            <i class="bi bi-list"></i>
+        </button>
+        <nav class="nav" id="nav">
+            <button class="cerrar-menu" id="cerrar">
+                <i class="bi bi-x-lg"></i>
+            </button>
+            <ul class="nav_items">
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="">Category</a></li>
+                <li><a href="">Productos</a></li>
+                <li><a href="">Company</a></li>
+                <li><a href="">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="carrito_cotainer">
+        <h1 class="carrito_titulo">Carrito</h1>
+        <div class="carrito">
+            <p id="carrito-vacio"class="carrito_vacio disabled">Tu Carrito esta vacio<i class="bi bi-emoji-frown"></i></p>
+            <div id="carrito-productos" class="carrito_productos disabled">
+             <!--   completado en js -->
+            </div>
+            <div id="carrito-accion" class="carrito_accion disabled">
+                <div class="carrito_accion_izquierda">
+                    <button id="carrito-vaciar" class="carrito_accion_vaciar">vaciar</button>
+                </div>
+                <div class="carrito_accion_derecha">
+                    
+                    <div class="carrito_accion_total">
+                        <p>Total:</p>
+                        <p id="total">$2323</p>
+                    </div>
+                    <button id= "carrito-comprar "class="carrito_accion_comprar">comprar</button>
+                </div>
+            </div>
+            <p id="carrito-comprado" class="carrito_comprado disabled">Gracias por tu compra.<i class="bi bi-emoji-smile"></i></p>
+        </div>
+    </section>
+
+
+
+   
+    <script src="./js/navbar.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="./js/carrito.js"></script>
+</body>
+
+</html>
