@@ -1,5 +1,4 @@
 
-
 // ***********CONECTAR CON EL JSON Y LLEVARLO AL HTML
 let productos = []
 fetch("./js/productos.json")
