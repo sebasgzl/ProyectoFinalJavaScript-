@@ -1,122 +1,15 @@
-// ARRAYS DE PRODUCTOS
-const productos = [
-  /*    Monitores */
-  {
-    id: "monitor-1",
-    titulo: "Monitor 1",
-    imagen: "./assest/monitor/monitor 1.jpg",
-    categoria: {
-      nombre: "Monitor",
-      id: "monitor",
-    },
-    precio: 1000,
-  },
 
-  {
-    id: "monitor-2",
-    titulo: "Monitor 2",
-    imagen: "./assest/monitor/monitor 2.jpg",
-    categoria: {
-      nombre: "Monitor",
-      id: "monitor",
-    },
-    precio: 1000,
-  },
-  /*   Mouse */
-  {
-    id: "mouse-1",
-    titulo: "Mouse 1",
-    imagen: "./assest/mouse/mouse 1.jpg",
-    categoria: {
-      nombre: "Mouse",
-      id: "mouse",
-    },
-    precio: 1000,
-  },
-  {
-    id: "mouse-2",
-    titulo: "Mouse 2",
-    imagen: "./assest/mouse/mouse 2.jpg",
-    categoria: {
-      nombre: "Mouse",
-      id: "mouse",
-    },
-    precio: 2000,
-  },
-  /*  Placa de video */
-  {
-    id: "placa-de-video-1",
-    titulo: "Placa de video 1",
-    imagen: "./assest/placa-de-video/placa de video 1.jpg",
-    categoria: {
-      nombre: "Placa de video",
-      id: "placa-de-video",
-    },
-    precio: 1000,
-  },
-  {
-    id: "placa-de-video-2",
-    titulo: "Placa de video 2",
-    imagen: "./assest/placa-de-video/placa de video 2.jpg",
-    categoria: {
-      nombre: "Placa de video",
-      id: "placa-de-video",
-    },
-    precio: 2000,
-  },
-  /* SILLA GAMER */
-  {
-    id: "silla-gamer-1",
-    titulo: "Silla gamer 1",
-    imagen: "./assest/silla-gamer/silla-gamer 1.jpg",
-    categoria: {
-      nombre: "Silla gamer",
-      id: "silla-gamer",
-    },
-    precio: 1000,
-  },
-  {
-    id: "silla-gamer-2",
-    titulo: "Silla gamer 2",
-    imagen: "./assest/silla-gamer/silla-gamer 2.jpg",
-    categoria: {
-      nombre: "Silla gamer",
-      id: "silla-gamer",
-    },
-    precio: "2009",
-  },
-  {
-    id: "silla-gamer-3",
-    titulo: "Silla gamer 3",
-    imagen: "./assest/silla-gamer/silla-gamer 3.jpg",
-    categoria: {
-      nombre: "Silla gamer",
-      id: "silla-gamer",
-    },
-    precio: "2009",
-  },
-  /*  Teclado Gamer */
-  {
-    id: "teclado-gamer-1",
-    titulo: "Teclado gamer 1",
-    imagen: "./assest/teclado-gamer/teclado-gamer 1.jpg",
-    categoria: {
-      nombre: "Teclado gamer",
-      id: "teclado-gamer",
-    },
-    precio: 1000,
-  },
-  {
-    id: "teclado-gamer-2",
-    titulo: "Teclado Gamer 2",
-    imagen: "./assest/teclado-gamer/teclado-gamer 2.jpg",
-    categoria: {
-      nombre: "Teclado gamer",
-      id: "teclado-gamer",
-    },
-    precio: "2009",
-  },
-];
+
+// ***********CONECTAR CON EL JSON Y LLEVARLO AL HTML
+let productos = []
+fetch("./js/productos.json")
+.then(response => response.json())
+.then (data => {
+  productos = data;
+  cargarProductos(productos)
+})
+
+
 
 //Traer del HTML
 const contenedorProductos = document.querySelector("#contenedor-productos");
@@ -124,6 +17,17 @@ const botonesCategorias = document.querySelectorAll(".boton-categoria");
 const tituloPrincipal = document.querySelector("#titulo-principal");
 let btnAgregar = document.querySelectorAll(".product_btn");
 let numero = document.querySelector("#numero");
+const buscarInput = document.querySelector("#buscador");
+
+
+// ********BUSCADOR DE PRODUCTOS
+buscarInput.addEventListener("keyup", () => {
+  const textoBusqueda = buscarInput.value.toLowerCase();
+  const productosFiltrados = productos.filter((producto) => {
+    return producto.titulo.toLowerCase().includes(textoBusqueda);
+  });
+  cargarProductos(productosFiltrados);
+});
 
 
 // *********COTENERDOR PRODUCTO EN EL MAIN
@@ -147,6 +51,9 @@ function cargarProductos(productosElegidos) {
 }
 /* Llamado */
 cargarProductos(productos);
+
+
+
 
 //******* MOSTRAR LA CATEGORIA CORRESPONDIENTE
 
@@ -214,7 +121,25 @@ function agregarAlCarrito(e) {
  }
  numeroActualizado();
  localStorage.setItem("productos-en-carrito",JSON.stringify(productosEnCarrito));
+
+ Toastify({
+  text: "Producto Agregado",
+  duration: 3000,
+  newWindow: true,
+  close: true,
+  gravity: "bottom", // `top` or `bottom`
+  position: "right", // `left`, `center` or `right`
+  stopOnFocus: true, // Prevents dismissing of toast on hover
+  style: {
+    background: "linear-gradient(to right,#403A3E ,#BE5869 )",
+  },
+  onClick: function(){} // Callback after click
+}).showToast();
+
 }
+
+
+
 
 /* Actualiza cantidad de compra */
 function numeroActualizado() {

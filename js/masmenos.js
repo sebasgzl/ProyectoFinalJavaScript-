@@ -1,5 +1,3 @@
-
-
 let productosEnCarrito = (localStorage.getItem("productos-en-carrito"));
 productosEnCarrito = JSON.parse(productosEnCarrito);
 
@@ -104,22 +102,6 @@ function botonesEliminar() {
     productosEnCarrito.splice(index, 1) ;  
     CargarProductoCarrito();
     localStorage.setItem("productos-en-carrito",JSON.stringify(productosEnCarrito));
-  
-    Toastify({
-      text: "Producto Eliminado",
-      duration: 3000,
-      newWindow: true,
-      close: true,
-      gravity: "top", // `top` or `bottom`
-      position: "right", // `left`, `center` or `right`
-      stopOnFocus: true, // Prevents dismissing of toast on hover
-      style: {
-        background: "linear-gradient(to right,#360033 ,#0b8793 )",
-      },
-      onClick: function(){} // Callback after click
-    }).showToast();
-  
-  
   }
 
 
@@ -128,28 +110,9 @@ function botonesEliminar() {
 botonVaciar.addEventListener("click" , vaciarCarrito)
 function vaciarCarrito () {
     
-  
-  Swal.fire({
-    title: 'Estas seguro ?',
-    text: "¡No podrás revertir esto!",
-    icon: 'warning',
-    showCancelButton: true,
-    confirmButtonColor: '#3085d6',
-    cancelButtonColor: '#d33',
-    confirmButtonText: 'si, vaciar carrito!'
-  }).then((result) => {
-    if (result.isConfirmed) {
-      Swal.fire(
-        ' Eliminado !',
-        'tu carrito fue vaciado.',
-        'aceptar'
-        )
-        productosEnCarrito.length = 0;
-        localStorage.setItem("productos-en-carrito" , JSON.stringify(productosEnCarrito));
-        CargarProductoCarrito();
-      }
-    })
-      
+productosEnCarrito.length = 0;
+localStorage.setItem("productos-en-carrito" , JSON.stringify(productosEnCarrito));
+CargarProductoCarrito();
 
 }
 
@@ -161,10 +124,6 @@ function actualizarTotal() {
        total.innerText = `$${totalCalculado}`
    }
 
-/* function actualizarTotal() {
- const totalCalculado = productosEnCarrito.reduce((acc, producto) => acc + (producto.precio * producto.cantidad),0);
-    total.innerText = `$${totalCalculado}`
-} */
 
 
 //********* BOTON COMPRAR 
@@ -179,13 +138,26 @@ function comprarCarrito() {
     carritoAccion.classList.add("disabled");  
     carritoComprado.classList.remove("disabled");
 
-    Swal.fire({
-      icon: 'success',
-      title: 'Comprado',
-      text: 'El producto será empaquetado y enviado ',
-     
-    })
-    
-
-
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

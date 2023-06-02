@@ -1,0 +1,117 @@
+[
+{
+    "id": "monitor-1",
+    "titulo": "Monitor 1",
+    "imagen": "./assest/monitor/monitor 1.jpg",
+    "categoria": {
+      "nombre": "Monitor",
+      "id": "monitor"
+    },
+    "precio": 1000
+  },
+
+  {
+    "id": "monitor-2",
+    "titulo": "Monitor 2",
+    "imagen": "./assest/monitor/monitor 2.jpg",
+    "categoria": {
+      "nombre": "Monitor",
+      "id": "monitor"
+    },
+    "precio": 1000
+  },
+
+  {
+    "id": "mouse-1",
+    "titulo": "Mouse 1",
+    "imagen": "./assest/mouse/mouse 1.jpg",
+    "categoria": {
+      "nombre": "Mouse",
+      "id":"mouse"
+    },
+    "precio": 1000
+  },
+  {
+    "id": "mouse-2",
+    "titulo": "Mouse 2",
+    "imagen": "./assest/mouse/mouse 2.jpg",
+    "categoria": {
+      "nombre": "Mouse",
+      "id": "mouse"
+    },
+    "precio": 2000
+  },
+ 
+  {
+    "id": "placa-de-video-1",
+    "titulo": "Placa de video 1",
+    "imagen": "./assest/placa-de-video/placa de video 1.jpg",
+    "categoria": {
+      "nombre": "Placa de video",
+      "id": "placa-de-video"
+    },
+    "precio": 1000
+  },
+  {
+    "id": "placa-de-video-2",
+    "titulo": "Placa de video 2",
+    "imagen": "./assest/placa-de-video/placa de video 2.jpg",
+    "categoria": {
+      "nombre": "Placa de video",
+      "id": "placa-de-video"
+    },
+    "precio": 2000
+  },
+ 
+  {
+    "id": "silla-gamer-1",
+    "titulo": "Silla gamer 1",
+    "imagen": "./assest/silla-gamer/silla-gamer 1.jpg",
+    "categoria": {
+      "nombre": "Silla gamer",
+      "id": "silla-gamer"
+    },
+    "precio": 1000
+  },
+  {
+    "id": "silla-gamer-2",
+    "titulo": "Silla gamer 2",
+    "imagen": "./assest/silla-gamer/silla-gamer 2.jpg",
+    "categoria": {
+      "nombre": "Silla gamer",
+      "id": "silla-gamer"
+    },
+    "precio": "2009"
+  },
+  {
+    "id": "silla-gamer-3",
+    "titulo": "Silla gamer 3",
+    "imagen": "./assest/silla-gamer/silla-gamer 3.jpg",
+    "categoria": {
+      "nombre": "Silla gamer",
+      "id": "silla-gamer"
+    },
+    "precio": "2009"
+  },
+ 
+  {
+    "id": "teclado-gamer-1",
+    "titulo": "Teclado gamer 1",
+    "imagen": "./assest/teclado-gamer/teclado-gamer 1.jpg",
+    "categoria": {
+      "nombre": "Teclado gamer",
+      "id": "teclado-gamer"
+    },
+    "precio": 1000
+  },
+  {
+    "id": "teclado-gamer-2",
+    "titulo": "Teclado Gamer 2",
+    "imagen": "./assest/teclado-gamer/teclado-gamer 2.jpg",
+    "categoria": {
+      "nombre": "Teclado gamer",
+      "id": "teclado-gamer"
+    },
+    "precio": "2009"
+  }
+]
